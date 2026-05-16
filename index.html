@@ -30,4 +30,4 @@ function render(){const term=q.value.trim().toLowerCase(), c=cat.value;const fil
 function stats(){const ready=sounds.filter(s=>ytId(s.exactYoutubeUrl)).length;document.getElementById('totalCount').textContent=sounds.length;document.getElementById('readyCount').textContent=ready;document.getElementById('pendingCount').textContent=sounds.length-ready;document.getElementById('sourceCount').textContent=sounds.filter(s=>s.sourceBackup).length;}
 q.addEventListener('input',render);cat.addEventListener('change',render);document.getElementById('clear').onclick=()=>{q.value='';cat.value='';render()};initCats();stats();render();
 </script>
-</body></html>
+</body></html> 
