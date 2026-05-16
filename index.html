@@ -4,30 +4,1588 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PNRP Engine Sound Preview｜聲浪預覽館</title>
-<script src="sounds-config.js"></script>
+<meta name="description" content="PARTY NIGHT RP engine sound preview library with in-site YouTube playback." />
 <style>
-:root{--bg:#070912;--panel:rgba(18,22,38,.72);--line:rgba(255,255,255,.12);--text:#f3f6ff;--muted:#9aa7c7;--purple:#8b5cf6;--blue:#38bdf8;--pink:#ec4899;--orange:#f59e0b;--green:#22c55e;--red:#ef4444}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,"Noto Sans TC",sans-serif;color:var(--text);background:radial-gradient(circle at 15% 10%,rgba(139,92,246,.35),transparent 28%),radial-gradient(circle at 80% 0%,rgba(56,189,248,.25),transparent 30%),radial-gradient(circle at 65% 90%,rgba(236,72,153,.16),transparent 32%),linear-gradient(135deg,#050714 0%,#090b18 46%,#05060c 100%);min-height:100vh}.wrap{max-width:1320px;margin:0 auto;padding:36px 22px 60px}.hero{position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.035));border-radius:30px;padding:34px;box-shadow:0 24px 90px rgba(0,0,0,.38);backdrop-filter:blur(18px)}.hero:before{content:"";position:absolute;inset:-2px;background:linear-gradient(120deg,rgba(139,92,246,.24),transparent 25%,rgba(56,189,248,.22) 55%,transparent 75%,rgba(245,158,11,.16));pointer-events:none}.hero>*{position:relative}.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);padding:8px 12px;border-radius:999px;color:#dbe6ff;font-size:13px}h1{font-size:clamp(30px,5vw,58px);line-height:1.02;margin:18px 0 12px;letter-spacing:-.055em}.grad{background:linear-gradient(90deg,#fff,#c7d2fe,#7dd3fc,#fbbf24);-webkit-background-clip:text;background-clip:text;color:transparent}.sub{max-width:940px;color:#c8d1ea;font-size:16px;line-height:1.7;margin:0}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:26px}.stat{border:1px solid var(--line);background:rgba(0,0,0,.2);border-radius:20px;padding:18px}.stat b{display:block;font-size:28px;margin-bottom:5px}.stat span{color:var(--muted);font-size:13px}.toolbar{display:grid;grid-template-columns:1.3fr .9fr auto;gap:12px;margin:22px 0}input,select,button{font:inherit}.search,.select{width:100%;border:1px solid var(--line);background:rgba(10,14,27,.76);color:var(--text);border-radius:16px;padding:14px 15px;outline:none}.btn{border:1px solid var(--line);background:rgba(255,255,255,.08);color:var(--text);border-radius:16px;padding:12px 16px;cursor:pointer;transition:.18s;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800}.btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.13)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border-radius:24px;padding:18px;box-shadow:0 18px 50px rgba(0,0,0,.24);backdrop-filter:blur(12px);position:relative;overflow:hidden}.card:after{content:"";position:absolute;right:-40px;top:-50px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.22),transparent 65%);pointer-events:none}.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.num{color:#a5b4fc;font-weight:900;font-size:13px}.tag{font-size:11px;color:#dbeafe;border:1px solid rgba(125,211,252,.25);background:rgba(56,189,248,.10);border-radius:999px;padding:6px 9px;white-space:nowrap}.tag.ready{border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.12);color:#bbf7d0}.tag.pending{border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.12);color:#fde68a}.card h3{font-size:18px;line-height:1.25;margin:10px 0 8px;letter-spacing:-.02em}.cat{font-size:12px;color:#bfdbfe;margin-bottom:12px}.hash{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:14px;padding:10px 11px;margin:10px 0;color:#e0e7ff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}.copy{border:0;background:rgba(255,255,255,.08);color:#e5e7eb;border-radius:10px;padding:6px 8px;cursor:pointer}.info{color:#b9c4de;font-size:13px;line-height:1.55;min-height:62px}.actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}.youtube{background:linear-gradient(135deg,#ef4444,#f97316);border:0;color:white;box-shadow:0 10px 28px rgba(239,68,68,.18)}.disabled{opacity:.55;cursor:not-allowed}.source{font-size:13px;padding:10px 12px;color:#dbeafe}.note{color:#9fb0d8;font-size:12px;line-height:1.55;margin-top:12px;border-top:1px solid var(--line);padding-top:12px}.footer{color:var(--muted);font-size:12px;margin-top:28px;text-align:center}.empty{display:none;text-align:center;color:var(--muted);padding:50px;border:1px dashed var(--line);border-radius:24px;background:rgba(255,255,255,.04)}.modal{position:fixed;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(14px);display:none;align-items:center;justify-content:center;z-index:100;padding:24px}.modal.show{display:flex}.videoBox{width:min(980px,94vw);aspect-ratio:16/9;background:#020617;border:1px solid rgba(139,92,246,.45);border-radius:24px;box-shadow:0 0 80px rgba(139,92,246,.28);position:relative}.videoBox iframe{width:100%;height:100%;border:0;border-radius:24px}.close{position:absolute;right:0;top:-48px;width:40px;height:40px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.1);color:white;font-size:24px;cursor:pointer}@media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar{grid-template-columns:1fr}}@media(max-width:640px){.grid{grid-template-columns:1fr}.hero{padding:24px}.stats{grid-template-columns:1fr}}
+  :root {
+    --bg:#050714; --bg2:#0b1020; --panel:rgba(18,22,38,.72); --panel2:rgba(255,255,255,.055);
+    --line:rgba(255,255,255,.12); --line2:rgba(125,211,252,.24);
+    --text:#f3f6ff; --muted:#9aa7c7; --muted2:#c8d1ea;
+    --purple:#8b5cf6; --blue:#38bdf8; --pink:#ec4899; --orange:#f59e0b; --green:#22c55e; --red:#ef4444;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Arial, "Noto Sans TC", sans-serif; color:var(--text); background:
+    radial-gradient(circle at 15% 10%, rgba(139,92,246,.38), transparent 28%),
+    radial-gradient(circle at 82% 0%, rgba(56,189,248,.25), transparent 30%),
+    radial-gradient(circle at 68% 96%, rgba(236,72,153,.16), transparent 34%),
+    linear-gradient(135deg,#050714 0%,#090b18 46%,#05060c 100%); min-height:100vh;}
+  body:before{content:""; position:fixed; inset:0; pointer-events:none; background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:44px 44px; mask-image:linear-gradient(to bottom, rgba(0,0,0,.8), transparent 80%);}
+  .wrap{max-width:1320px;margin:0 auto;padding:36px 22px 70px; position:relative}
+  .hero{position:relative; overflow:hidden; border:1px solid var(--line); background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.035)); border-radius:30px; padding:34px; box-shadow:0 24px 90px rgba(0,0,0,.38); backdrop-filter: blur(18px);}
+  .hero:before{content:"";position:absolute;inset:-2px;background:linear-gradient(120deg,rgba(139,92,246,.24),transparent 25%,rgba(56,189,248,.22) 55%,transparent 75%,rgba(245,158,11,.16));pointer-events:none}
+  .hero>*{position:relative}
+  .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);padding:8px 12px;border-radius:999px;color:#dbe6ff;font-size:13px}
+  h1{font-size:clamp(30px,5vw,60px);line-height:1.02;margin:18px 0 12px;letter-spacing:-.055em}
+  .grad{background:linear-gradient(90deg,#fff,#c7d2fe,#7dd3fc,#fbbf24);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{max-width:930px;color:#c8d1ea;font-size:16px;line-height:1.72;margin:0}
+  .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:26px}
+  .stat{border:1px solid var(--line);background:rgba(0,0,0,.22);border-radius:20px;padding:18px}
+  .stat b{display:block;font-size:28px;margin-bottom:5px}
+  .stat span{color:var(--muted);font-size:12px;line-height:1.35}
+  .toolbar{position:sticky; top:0; z-index:30; display:grid;grid-template-columns:1.3fr .9fr auto auto;gap:12px;margin:22px 0; padding:12px; border:1px solid rgba(255,255,255,.08); border-radius:22px; background:rgba(5,7,20,.78); backdrop-filter: blur(18px)}
+  input,select,button{font:inherit}
+  .search,.select{width:100%;border:1px solid var(--line);background:rgba(10,14,27,.76);color:var(--text);border-radius:16px;padding:14px 15px;outline:none}
+  .search:focus,.select:focus{border-color:rgba(56,189,248,.65);box-shadow:0 0 0 4px rgba(56,189,248,.08)}
+  .btn{border:1px solid var(--line);background:rgba(255,255,255,.08);color:var(--text);border-radius:16px;padding:12px 16px;cursor:pointer;transition:.18s;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;white-space:nowrap}
+  .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.13)}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border-radius:24px;padding:18px;box-shadow:0 18px 50px rgba(0,0,0,.24);backdrop-filter:blur(12px);position:relative;overflow:hidden; min-height:315px}
+  .card:after{content:"";position:absolute;right:-40px;top:-50px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.22),transparent 65%);pointer-events:none}
+  .card.ready{border-color:rgba(34,197,94,.28)}
+  .card.pending{border-color:rgba(245,158,11,.22)}
+  .top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start; position:relative; z-index:2}
+  .num{color:#a5b4fc;font-weight:900;font-size:13px}
+  .tag{font-size:11px;color:#dbeafe;border:1px solid rgba(125,211,252,.25);background:rgba(56,189,248,.10);border-radius:999px;padding:6px 9px;white-space:nowrap}
+  .tag.ready{border-color:rgba(34,197,94,.35); background:rgba(34,197,94,.12); color:#bbf7d0}
+  .tag.pending{border-color:rgba(245,158,11,.34); background:rgba(245,158,11,.10); color:#fde68a}
+  .card h3{font-size:18px;line-height:1.25;margin:10px 0 8px;letter-spacing:-.02em; position:relative; z-index:2}
+  .cat{font-size:12px;color:#bfdbfe;margin-bottom:12px; position:relative; z-index:2}
+  .hash{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:14px;padding:10px 11px;margin:10px 0;color:#e0e7ff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;position:relative;z-index:2}
+  .copy{border:0;background:rgba(255,255,255,.08);color:#e5e7eb;border-radius:10px;padding:6px 8px;cursor:pointer}
+  .copy:hover{background:rgba(255,255,255,.16)}
+  .info{color:#b9c4de;font-size:13px;line-height:1.55;min-height:62px;position:relative;z-index:2}
+  .actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;position:relative;z-index:2}
+  .youtube{background:linear-gradient(135deg,#ef4444,#f97316);border:0;color:white;box-shadow:0 10px 28px rgba(239,68,68,.18)}
+  .searchbtn{background:rgba(56,189,248,.10);border-color:rgba(56,189,248,.25);color:#dbeafe}
+  .source{font-size:13px;padding:10px 12px;color:#dbeafe}
+  .note{color:#9fb0d8;font-size:12px;line-height:1.55;margin-top:12px;border-top:1px solid var(--line);padding-top:12px;position:relative;z-index:2}
+  .footer{color:var(--muted);font-size:12px;margin-top:28px;text-align:center}
+  .empty{display:none;text-align:center;color:var(--muted);padding:50px;border:1px dashed var(--line);border-radius:24px;background:rgba(255,255,255,.04)}
+  .modal{position:fixed; inset:0; z-index:999; display:none; align-items:center; justify-content:center; padding:24px; background:rgba(0,0,0,.78); backdrop-filter:blur(14px)}
+  .modal.open{display:flex}
+  .player{width:min(980px,94vw); position:relative; border:1px solid rgba(125,211,252,.26); border-radius:24px; background:#030510; box-shadow:0 0 80px rgba(56,189,248,.16), 0 0 70px rgba(139,92,246,.18); overflow:hidden}
+  .playerHead{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 16px; border-bottom:1px solid rgba(255,255,255,.10); background:linear-gradient(90deg, rgba(139,92,246,.16), rgba(56,189,248,.10));}
+  .playerTitle{font-weight:900; font-size:14px; color:#e5edff; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .close{width:36px;height:36px;border-radius:999px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;font-size:22px;line-height:1}
+  .frameWrap{aspect-ratio:16/9; width:100%; background:#000}
+  iframe{width:100%;height:100%;border:0}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:rgba(15,23,42,.92);color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:10px 14px;font-size:13px;opacity:0;pointer-events:none;transition:.2s;z-index:1000}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  @media(max-width:1080px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.toolbar{grid-template-columns:1fr 1fr}}
+  @media(max-width:700px){.grid{grid-template-columns:1fr}.hero{padding:24px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar{grid-template-columns:1fr; position:relative}}
 </style>
 </head>
 <body>
-<main class="wrap">
-<section class="hero"><div class="badge">🔊 PARTY NIGHT RP｜Engine Sound Preview Hub</div><h1><span class="grad">PNRP 聲浪預覽館</span><br>Engine Sound Preview</h1><p class="sub">此版本使用獨立配置文件 <b>sounds-config.js</b>。已放入精準影片的聲浪可直接在網站內播放；未放影片的項目會顯示「待放置影片」，方便之後逐步補齊。</p><div class="stats"><div class="stat"><b id="totalCount">0</b><span>總聲浪 / Total Sounds</span></div><div class="stat"><b id="readyCount">0</b><span>可播放 / Ready</span></div><div class="stat"><b id="pendingCount">0</b><span>待放置 / Pending</span></div><div class="stat"><b id="sourceCount">0</b><span>來源備用 / Source</span></div></div></section>
-<section class="toolbar"><input id="q" class="search" placeholder="搜尋聲浪、audioNameHash、車款 / Search sound, hash, vehicle..." /><select id="cat" class="select"><option value="">全部分類 / All Categories</option></select><button id="clear" class="btn">重置 / Reset</button></section>
-<div id="grid" class="grid"></div><div id="empty" class="empty">找不到符合條件的聲浪 / No matching sound found.</div><div class="footer">PNRP｜Website config mode. Final in-game sound may vary depending on server audio pack and vehicle setup.</div>
-</main>
-<div id="videoModal" class="modal"><div class="videoBox"><button class="close" onclick="closeVideo()">×</button><iframe id="player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+  <main class="wrap">
+    <section class="hero">
+      <div class="badge">🔊 PARTY NIGHT RP｜Engine Sound Preview Hub</div>
+      <h1><span class="grad">PNRP 聲浪預覽館</span><br>Engine Sound Preview</h1>
+      <p class="sub">單文件版 <b>index.html</b>：所有聲浪資料已內嵌，不需要後台或額外 JS。已填入精準 YouTube 的聲浪可直接在網站內播放；未填影片的聲浪會顯示搜尋或 Source 備用入口。</p>
+      <div class="stats">
+        <div class="stat"><b>102</b><span>總聲浪 / Total Sounds</span></div>
+        <div class="stat"><b>29</b><span>站內播放 / In-site Videos</span></div>
+        <div class="stat"><b>73</b><span>待放置影片 / Pending</span></div>
+        <div class="stat"><b>50</b><span>來源備用 / Source Backups</span></div>
+        <div class="stat"><b>11</b><span>分類 / Categories</span></div>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <input id="q" class="search" placeholder="搜尋聲浪、audioNameHash、車款 / Search sound, hash, vehicle..." />
+      <select id="cat" class="select"></select>
+      <select id="status" class="select">
+        <option value="">全部狀態 / All Status</option>
+        <option value="ready">可站內播放 / In-site Play</option>
+        <option value="pending">待放置影片 / Pending</option>
+      </select>
+      <button id="clear" class="btn">重置 / Reset</button>
+    </section>
+
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty">找不到符合條件的聲浪 / No matching sound found.</div>
+    <div class="footer">PNRP｜Final in-game sound may vary depending on server audio pack and vehicle setup.</div>
+  </main>
+
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="YouTube Player">
+    <div class="player">
+      <div class="playerHead">
+        <div id="playerTitle" class="playerTitle">PNRP Engine Sound Preview</div>
+        <button id="close" class="close" aria-label="Close">×</button>
+      </div>
+      <div class="frameWrap"><iframe id="ytframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    </div>
+  </div>
+  <div id="toast" class="toast">Copied</div>
+
+<script id="sound-data" type="application/json">[
+  {
+    "no": 1,
+    "category": "Lamborghini V10 / V12｜Lamborghini V10 / V12",
+    "name": "Lamborghini SVJ V12",
+    "hash": "kc202svjgianv12",
+    "item": "kc202svjgianv12",
+    "info": "6.5L Lamborghini V12 style swap. Best for Aventador/SVJ/Veneno class supercars; not suitable for tiny city cars.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=mhAdgufH-kI&t=4s",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Lamborghini%20SVJ%20V12%20kc202svjgianv12%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 2,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Mazda 13B Rotary",
+    "hash": "kc32jpn13b",
+    "item": "kc32jpn13b",
+    "info": "JDM 13B rotary sound. Best for RX-7/RX-8 style builds, lightweight drift cars and rotary conversions.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://drive.google.com/file/d/1fcrBZjVb3zY4MRhNHfo8kK-gXNTdvv8E/view",
+    "sourceBackup": "https://drive.google.com/file/d/1fcrBZjVb3zY4MRhNHfo8kK-gXNTdvv8E/view",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 3,
+    "category": "美式肌肉 / V8 / Viper｜US Muscle / V8 / Viper",
+    "name": "Dodge Challenger SRT V8",
+    "hash": "kc58challengersrt",
+    "item": "kc58challengersrt",
+    "info": "American SRT V8 muscle sound. Best for Challenger/Charger/Camaro/Mustang class cars.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=rjjFeXPJTaE",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=rjjFeXPJTaE",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 4,
+    "category": "美式肌肉 / V8 / Viper｜US Muscle / V8 / Viper",
+    "name": "Dodge 6.2 SRT V8",
+    "hash": "kc58stk62srt",
+    "item": "kc58stk62srt",
+    "info": "Stock 6.2L SRT/Hellcat style V8. Best for heavy American muscle cars and high-power street builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=kJP4oXVsKA8",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=kJP4oXVsKA8",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 5,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Nissan RB25DET I6",
+    "hash": "kc150rb25detst",
+    "item": "kc150rb25detst",
+    "info": "RB25DET turbo inline-six sound. Best for R33/S-Chassis/JDM drift builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=fgEO3IV_Zgg",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=fgEO3IV_Zgg",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 6,
+    "category": "Mercedes-AMG｜Mercedes-AMG",
+    "name": "AMG M177 V8",
+    "hash": "kc155m177gtr18",
+    "item": "kc155m177gtr18",
+    "info": "Mercedes-AMG M177 bi-turbo V8 style. Best for AMG GT/C63/E63 class cars.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=WL_e85RKI7k",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=WL_e85RKI7k",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 7,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Honda K20 Civic Si",
+    "hash": "kc158k20si",
+    "item": "kc158k20si",
+    "info": "Honda K20 high-rev four-cylinder sound. Best for Civic/Integra/lightweight FWD swaps.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=2lC2QUo-Pr8",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=2lC2QUo-Pr8",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 8,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Toyota GR Yaris G16E",
+    "hash": "kc167gryaris",
+    "item": "kc167gryaris",
+    "info": "Toyota GR Yaris turbo three-cylinder style sound. Best for compact rally/hot-hatch builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=V5i-fKXGDBw",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=V5i-fKXGDBw",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 9,
+    "category": "Lamborghini V10 / V12｜Lamborghini V10 / V12",
+    "name": "Lamborghini Gallardo V10",
+    "hash": "kc169v10gallardo",
+    "item": "kc169v10gallardo",
+    "info": "Lamborghini 5.0/5.2 V10 style sound. Best for Gallardo/Huracan/R8 style supercars.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=dqcY0GmnRIM",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=dqcY0GmnRIM",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 10,
+    "category": "其他 / 特殊｜Other / Exotic",
+    "name": "Italian 5.0 V10",
+    "hash": "kc169v10ita50",
+    "item": "kc169v10ita50",
+    "info": "High-rev Italian V10 sound. Best for mid-engine exotic builds and race conversions.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=Pu0c1dzPn8k",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=Pu0c1dzPn8k",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 11,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Nissan GT-R Nismo VR38",
+    "hash": "kc189gtrnism",
+    "item": "kc189gtrnism",
+    "info": "GT-R Nismo VR38 twin-turbo V6 sound. Best for R35 GT-R and AWD supercar builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=9Z-NNjSDDCE",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=9Z-NNjSDDCE",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 12,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Nissan RB26 NUR I6",
+    "hash": "kc195rb26nur",
+    "item": "kc195rb26nur",
+    "info": "RB26DETT NUR-style turbo inline-six. Best for Skyline GT-R R32/R33/R34 builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=6jcqCjR79_g",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=6jcqCjR79_g",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 13,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW M4 F82 S55",
+    "hash": "kc201m4f82",
+    "item": "kc201m4f82",
+    "info": "BMW S55 twin-turbo inline-six sound. Best for M3/M4 F80/F82 and modern BMW swaps.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=I511oPMn0Sc",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=I511oPMn0Sc",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 14,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW S55 Loud",
+    "hash": "kc201s55loud",
+    "item": "kc201s55loud",
+    "info": "Loud BMW S55 twin-turbo inline-six. Best for tuned M3/M4 builds with aggressive exhaust.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=I511oPMn0Sc",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=I511oPMn0Sc",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 15,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Yamaha R1 Akrapovic",
+    "hash": "kc206yar1akra",
+    "item": "kc206yar1akra",
+    "info": "High-rev superbike sound. Best for motorcycle/superbike builds, not normal cars.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=g0BUqz5C-0g",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=g0BUqz5C-0g",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 16,
+    "category": "其他 / 特殊｜Other / Exotic",
+    "name": "Aston Martin V12",
+    "hash": "kc212v12vantsecret",
+    "item": "kc212v12vantsecret",
+    "info": "Aston Martin V12 grand-tourer sound. Best for Vantage/DBS/DB11 style GT cars.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=4v7OanSmVHM",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=4v7OanSmVHM",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 17,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Honda K20 Decat",
+    "hash": "kc219k20decat",
+    "item": "kc219k20decat",
+    "info": "Decatted Honda K20 high-rev four-cylinder. Best for Civic/Integra/track hatch builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=UJsTfcWpQAY",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=UJsTfcWpQAY",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 18,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW B48 Loud",
+    "hash": "kc223b48loud",
+    "item": "kc223b48loud",
+    "info": "BMW B48 turbo four-cylinder loud exhaust sound. Best for 20i/30i BMW and compact euro builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=l_Q7yN5VD1w",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=l_Q7yN5VD1w",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 19,
+    "category": "Lamborghini V10 / V12｜Lamborghini V10 / V12",
+    "name": "Lamborghini 5.2 V10",
+    "hash": "kc229v10secret52",
+    "item": "kc229v10secret52",
+    "info": "Secret/tuned 5.2L V10 style. Best for Huracan/Gallardo/R8 class cars.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=5XJJlYFtNm4",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=5XJJlYFtNm4",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 20,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Ford Coyote V8 TT",
+    "hash": "kc249coyv8sttt",
+    "item": "kc249coyv8sttt",
+    "info": "Twin-turbo Ford Coyote V8 sound. Best for Mustang/GT500 and high-power muscle builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Ford%20Coyote%20V8%20TT%20kc249coyv8sttt%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 21,
+    "category": "超跑 / Hypercar / F1｜Supercar / Hypercar / F1",
+    "name": "Porsche GT3 F1 Style",
+    "hash": "kc259gt3swf1",
+    "item": "kc259gt3swf1",
+    "info": "High-rev GT3/F1-inspired race sound. Best for GT3/track-only Porsche style builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=kIObX-UIVQc",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=kIObX-UIVQc",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 22,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW M5 S63TU V8",
+    "hash": "kc228m5s63t",
+    "item": "kc228m5s63t",
+    "info": "BMW S63TU twin-turbo V8 sound. Best for M5/M8/X5M/X6M and fast executive builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=RAQdIVi98ds",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=RAQdIVi98ds",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 23,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW M5 S63 Pops",
+    "hash": "kc228m5s63tpops",
+    "item": "kc228m5s63tpops",
+    "info": "BMW S63TU V8 with pops/crackles. Best for tuned M5/M8 builds with aggressive exhaust.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=RAQdIVi98ds",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=RAQdIVi98ds",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 24,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Mazda RX-7 FD 13B",
+    "hash": "kc32rx7fd3s",
+    "item": "kc32rx7fd3s",
+    "info": "RX-7 FD3S 13B rotary sound. Best for RX-7 builds, drift cars and rotary swaps.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=g1QBEgRCYAY",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=g1QBEgRCYAY",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 25,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Nissan VQ35DE V6",
+    "hash": "kc131vq35de",
+    "item": "kc131vq35de",
+    "info": "Nissan VQ35 naturally aspirated V6 sound. Best for 350Z/G35/Fairlady style builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=sczDcNMreek",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=sczDcNMreek",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 26,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Toyota 4A-GE I4",
+    "hash": "4age",
+    "item": "4age",
+    "info": "Classic Toyota 4A-GE naturally aspirated four-cylinder. Best for AE86/lightweight old-school JDM builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=qdNk5MhkCrM",
+    "youtubeSearchUrl": "",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/toyota-ae86-4age-i4-sound-mod-sp-fivem-add-on",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 27,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Nissan VR38DETT V6",
+    "hash": "aq10nisvr38dett",
+    "item": "aq10nisvr38dett",
+    "info": "Nissan GT-R VR38DETT twin-turbo V6. Best for R35 GT-R and modern AWD performance cars.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=CqKvqSAloQo",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=CqKvqSAloQo",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 28,
+    "category": "Ferrari V8 / V12｜Ferrari V8 / V12",
+    "name": "Ferrari F154 V8",
+    "hash": "aq35ferf154cd",
+    "item": "aq35ferf154cd",
+    "info": "Ferrari F154 twin-turbo V8 style sound. Best for 488/F8/Roma/Portofino style cars.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=2Qg5QGZ9I1s",
+    "youtubeSearchUrl": "https://wahttps://www.youtube.com/watch?v=2Qg5QGZ9I1sww.youtube.com/results?search_query=aq35ferf154cd%20Ferrari%20F154%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.youtube.com/watch?v=2Qg5QGZ9I1s",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 29,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Honda K20A I4",
+    "hash": "aq58honk20a",
+    "item": "aq58honk20a",
+    "info": "Honda K20A high-rev naturally aspirated four-cylinder. Best for Type R and track hatch builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Honda%20K20A%20I4%20aq58honk20a%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 30,
+    "category": "Lamborghini V10 / V12｜Lamborghini V10 / V12",
+    "name": "Lamborghini 5.2 V10",
+    "hash": "aq68lam52v10",
+    "item": "aq68lam52v10",
+    "info": "Lamborghini 5.2L V10 sound. Best for Huracan/Gallardo/Audi R8 style supercars.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=aq68lam52v10%20Lamborghini%205.2%20V10%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/lamborghini-huracan-audi-r8-5-2-v10-engine-sound-oiv-add-on-fivem-sound",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 31,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW S85 V10",
+    "hash": "aq77bmws85",
+    "item": "aq77bmws85",
+    "info": "BMW S85 5.0L V10 sound. Best for E60 M5/E63 M6 and high-rev BMW swaps.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=aq77bmws85%20BMW%20S85%20V10%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/bmw-s85-v10-engine-sound-oiv-add-on-fivem-sound",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 32,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW S65 V8",
+    "hash": "aq78bmws65",
+    "item": "aq78bmws65",
+    "info": "BMW S65 4.0L V8 sound. Best for E92 M3 and naturally aspirated BMW builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=aq78bmws65%20BMW%20S65%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/bmw-m3-e92-s65-v8-engine-sound-oiv-add-on-fivem-sound",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 33,
+    "category": "Audi / Bentley / VAG｜Audi / Bentley / VAG",
+    "name": "Audi RS6 C8 V8",
+    "hash": "ars6c8avant",
+    "item": "ars6c8avant",
+    "info": "Audi RS6 C8 4.0 TFSI V8 sound. Best for RS6/RS7 fast wagon/sedan builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=ars6c8avant%20Audi%20RS6%20C8%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/audi-rs6-c8-avant-engine-sound-add-on-sp-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 34,
+    "category": "Audi / Bentley / VAG｜Audi / Bentley / VAG",
+    "name": "Audi EA855 I5",
+    "hash": "audiea855",
+    "item": "audiea855",
+    "info": "Audi EA855 turbo inline-five sound. Best for RS3/TTRS/Quattro style builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=audiea855%20Audi%20EA855%20I5%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/audi-5-cylinder-engine-sound-pack-oiv-addon-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 35,
+    "category": "Audi / Bentley / VAG｜Audi / Bentley / VAG",
+    "name": "Bentley Continental W12",
+    "hash": "bcontinentalgt",
+    "item": "bcontinentalgt",
+    "info": "Bentley Continental GT grand-tourer sound. Best for luxury GT and heavy high-power cars.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Bentley%20Continental%20W12%20bcontinentalgt%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 36,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW G80 M3 Valvetronic",
+    "hash": "bm3g80valvetronic",
+    "item": "bm3g80valvetronic",
+    "info": "BMW G80 M3/S58 valvetronic exhaust sound. Best for G80/G82 M3/M4 builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=bm3g80valvetronic%20BMW%20G80%20M3%20Valvetronic%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/bmw-m3-g80-valvetronic-exhaust-engine-add-on-sound-mod-fivem-sp",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 37,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Nissan R34 GT-R RB26",
+    "hash": "bnr34ffeng",
+    "item": "bnr34ffeng",
+    "info": "Skyline R34 GT-R RB26-style engine sound. Best for BNR34 and RB26 swaps.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=bnr34ffeng%20Nissan%20R34%20GT-R%20RB26%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/2f2f-nissan-skyline-gtr-r34-rb26dett-i6-sound-mod-sp-fivem-add-on",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 38,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Mitsubishi Evo IX 4G63",
+    "hash": "evoixsound",
+    "item": "evoixsound",
+    "info": "Mitsubishi Lancer Evolution IX 4G63 turbo four-cylinder. Best for Evo/rally sedan builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Mitsubishi%20Evo%20IX%204G63%20evoixsound%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 39,
+    "category": "Ferrari V8 / V12｜Ferrari V8 / V12",
+    "name": "Ferrari F140 V12",
+    "hash": "ferrarif140fe",
+    "item": "ferrarif140fe",
+    "info": "Ferrari F140 V12 sound. Best for 812/F12/LaFerrari style V12 supercars.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=ferrarif140fe%20Ferrari%20F140%20V12%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/laferrari-ferrari-f140fe-sound-mod-oiv-addon-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 40,
+    "category": "超跑 / Hypercar / F1｜Supercar / Hypercar / F1",
+    "name": "Jaguar F-Type V8",
+    "hash": "ftypesound",
+    "item": "ftypesound",
+    "info": "Jaguar F-Type supercharged V8 style sound. Best for Jaguar/GT coupe builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Jaguar%20F-Type%20V8%20ftypesound%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 41,
+    "category": "超跑 / Hypercar / F1｜Supercar / Hypercar / F1",
+    "name": "Italian Twin-Turbo V10",
+    "hash": "italianttv10",
+    "item": "italianttv10",
+    "info": "Italian V10 with turbo character. Best for exotic custom supercar builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Italian%20Twin-Turbo%20V10%20italianttv10%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 42,
+    "category": "Audi / Bentley / VAG｜Audi / Bentley / VAG",
+    "name": "Audi RS6 Loud V8",
+    "hash": "kc194_rs6loud",
+    "item": "kc194_rs6loud",
+    "info": "Loud Audi RS6 4.0 TFSI V8 sound. Best for tuned RS6/RS7 builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Audi%20RS6%20Loud%20V8%20kc194_rs6loud%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 43,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW S58 Downpipe",
+    "hash": "kc233m3s58ds",
+    "item": "kc233m3s58ds",
+    "info": "BMW S58 turbo inline-six with downpipe sound. Best for G80/G82 M3/M4 tuned builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20S58%20Downpipe%20kc233m3s58ds%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 44,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW S58 Stage 2",
+    "hash": "kc233m3s58ds2c",
+    "item": "kc233m3s58ds2c",
+    "info": "BMW S58 tuned inline-six variant. Best for modern M3/M4 builds with aggressive exhaust.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20S58%20Stage%202%20kc233m3s58ds2c%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 45,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Nissan R33 GTS RB",
+    "hash": "kc24r33gts",
+    "item": "kc24r33gts",
+    "info": "Nissan Skyline R33 GTS turbo inline-six sound. Best for R33/JDM street builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=kc24r33gts%20Nissan%20R33%20GTS%20RB%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/nissan-skyline-r32-r33-r34-rb25det-sound-mod",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 46,
+    "category": "摩托車｜Motorcycle",
+    "name": "BMW S1000RR Akrapovic",
+    "hash": "kc74s1000rrakevoline",
+    "item": "kc74s1000rrakevoline",
+    "info": "BMW S1000RR Akrapovic superbike sound. Best for racing bikes/superbikes only.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=kc74s1000rrakevoline%20BMW%20S1000RR%20Akrapovic%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/bmw-s1000rr-akrapovic-evo-line-exhaust-engine-sound-mod-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 47,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "GM LS6 V8",
+    "hash": "kc98gmls6",
+    "item": "kc98gmls6",
+    "info": "GM LS6 American V8 sound. Best for Corvette/Camaro/LS-swap muscle builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=kc98gmls6%20GM%20LS6%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/gm-ls6-engine-sound-mod-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 48,
+    "category": "Lamborghini V10 / V12｜Lamborghini V10 / V12",
+    "name": "Lamborghini Aventador V12",
+    "hash": "lamavgineng",
+    "item": "lamavgineng",
+    "info": "Aventador V12 sound. Best for Aventador/SVJ/Veneno class supercars.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lamavgineng%20Lamborghini%20Aventador%20V12%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/gintani-f1-lamborghini-aventador-svj-v12-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 49,
+    "category": "Lamborghini V10 / V12｜Lamborghini V10 / V12",
+    "name": "Lamborghini Murcielago V12",
+    "hash": "lambomurciev12",
+    "item": "lambomurciev12",
+    "info": "Murcielago V12 sound. Best for Murcielago/older Lamborghini V12 builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Lamborghini%20Murcielago%20V12%20lambomurciev12%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 50,
+    "category": "Lamborghini V10 / V12｜Lamborghini V10 / V12",
+    "name": "Lamborghini Veneno V12",
+    "hash": "lamveneng",
+    "item": "lamveneng",
+    "info": "Veneno V12 sound. Best for extreme Lamborghini hypercar builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lamveneng%20Lamborghini%20Veneno%20V12%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/lamborghini-veneno-l539-v12-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 51,
+    "category": "超跑 / Hypercar / F1｜Supercar / Hypercar / F1",
+    "name": "Classic F1 V10",
+    "hash": "lg115classicf1v10",
+    "item": "lg115classicf1v10",
+    "info": "Classic Formula V10 high-rev sound. Best for F1/open-wheel/race-only vehicles.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg115classicf1v10%20Classic%20F1%20V10%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/formula-1-v10-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 52,
+    "category": "Mercedes-AMG｜Mercedes-AMG",
+    "name": "Mercedes SLS AMG V8",
+    "hash": "lg116slsamg",
+    "item": "lg116slsamg",
+    "info": "Mercedes SLS AMG 6.2L V8 sound. Best for SLS/AMG GT/C63 NA V8 builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg116slsamg%20Mercedes%20SLS%20AMG%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/mercedes-sls-amg-6-3l-v8-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 53,
+    "category": "Lamborghini V10 / V12｜Lamborghini V10 / V12",
+    "name": "Murcielago SV V12",
+    "hash": "lg123murcisp",
+    "item": "lg123murcisp",
+    "info": "Lamborghini Murcielago SuperVeloce V12 sound. Best for old-school V12 Lamborghini builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg123murcisp%20Murcielago%20SV%20V12%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/lamborghini-murcielago-straight-piped-exhaust-v12-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 54,
+    "category": "美式肌肉 / V8 / Viper｜US Muscle / V8 / Viper",
+    "name": "Dodge SRT8 Thunder V8",
+    "hash": "lg124srt8thndrc",
+    "item": "lg124srt8thndrc",
+    "info": "Loud Dodge SRT8/Hemi V8 sound. Best for Charger/Challenger/300C muscle builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg124srt8thndrc%20Dodge%20SRT8%20Thunder%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/chrysler-300c-srt-8-v8-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 55,
+    "category": "Audi / Bentley / VAG｜Audi / Bentley / VAG",
+    "name": "Mansory Bentley W12",
+    "hash": "lg125mnsrybently",
+    "item": "lg125mnsrybently",
+    "info": "Mansory Bentley luxury GT sound. Best for Continental GT/Mansory style builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg125mnsrybently%20Mansory%20Bentley%20W12%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/bentley-bentayga-mansory-v8-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 56,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Mazda RX-8 Renesis",
+    "hash": "lg15rx8ren",
+    "item": "lg15rx8ren",
+    "info": "Mazda RX-8 Renesis rotary sound. Best for RX-8 and rotary street builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg15rx8ren%20Mazda%20RX-8%20Renesis%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/mazda-rx-8-renesis-rotary-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 57,
+    "category": "其他 / 特殊｜Other / Exotic",
+    "name": "Toyota Supra A90 B58",
+    "hash": "lg16a90mk5",
+    "item": "lg16a90mk5",
+    "info": "Toyota GR Supra A90/BMW B58 turbo inline-six sound. Best for A90 Supra/Z4/B58 builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg16a90mk5%20Toyota%20Supra%20A90%20B58%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/toyota-supra-a90-b58-i6-tuned-sound-mod",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 58,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW M4 S55",
+    "hash": "lg18bmwm4",
+    "item": "lg18bmwm4",
+    "info": "BMW M4 turbo inline-six sound. Best for F82 M4/F80 M3 style builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg18bmwm4%20BMW%20M4%20S55%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/bmw-m4-s55-i6-akrapovic-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 59,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "JDM T26B Rotary",
+    "hash": "lg28cst26b",
+    "item": "lg28cst26b",
+    "info": "High-power rotary race sound. Best for RX-7/rotary race builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg28cst26b%20JDM%20T26B%20Rotary%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/mazda-custom-26b-4-rotor-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 60,
+    "category": "Mercedes-AMG｜Mercedes-AMG",
+    "name": "Mercedes AMG GT R V8",
+    "hash": "lg30meramgtr",
+    "item": "lg30meramgtr",
+    "info": "Mercedes-AMG GT R V8 sound. Best for AMG GT/GTR/GTS builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg30meramgtr%20Mercedes%20AMG%20GT%20R%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/mercedes-amg-gtr-4-0l-v8-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 61,
+    "category": "美式肌肉 / V8 / Viper｜US Muscle / V8 / Viper",
+    "name": "Twin-Turbo Viper V10",
+    "hash": "lg41ttviperv10",
+    "item": "lg41ttviperv10",
+    "info": "Twin-turbo Dodge Viper V10 sound. Best for Viper and extreme V10 swaps.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg41ttviperv10%20Twin-Turbo%20Viper%20V10%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/dodge-viper-srt-8-4l-v10-sound-mod-twin-turbo-na-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 62,
+    "category": "美式肌肉 / V8 / Viper｜US Muscle / V8 / Viper",
+    "name": "NA Viper V10",
+    "hash": "lg42naviperv10",
+    "item": "lg42naviperv10",
+    "info": "Naturally aspirated Dodge Viper V10 sound. Best for Viper/large sports car builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg42naviperv10%20NA%20Viper%20V10%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/dodge-viper-srt-8-4l-v10-sound-mod-twin-turbo-na-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 63,
+    "category": "超跑 / Hypercar / F1｜Supercar / Hypercar / F1",
+    "name": "Lexus LFA V10",
+    "hash": "lg48lexlfa",
+    "item": "lg48lexlfa",
+    "info": "Lexus LFA Yamaha-tuned V10 sound. Best for LFA and high-rev exotic GT builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg48lexlfa%20Lexus%20LFA%20V10%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/lexus-lfa-4-7l-v10-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 64,
+    "category": "美式肌肉 / V8 / Viper｜US Muscle / V8 / Viper",
+    "name": "Mustang GT500 V8",
+    "hash": "lg52musgt500v8",
+    "item": "lg52musgt500v8",
+    "info": "Ford Mustang GT500 supercharged V8 sound. Best for Shelby/Mustang muscle builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg52musgt500v8%20Mustang%20GT500%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/ford-mustang-shelby-gt500-v8-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 65,
+    "category": "Ferrari V8 / V12｜Ferrari V8 / V12",
+    "name": "Ferrari 488 Capristo",
+    "hash": "lg53fer488capri",
+    "item": "lg53fer488capri",
+    "info": "Ferrari 488 with Capristo-style exhaust. Best for 488/F8/Roma tuned builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg53fer488capri%20Ferrari%20488%20Capristo%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/ferrari-488-gtb-3-9l-v8-capristo-exhaust-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 66,
+    "category": "美式肌肉 / V8 / Viper｜US Muscle / V8 / Viper",
+    "name": "Mustang GT V8",
+    "hash": "lg57mustangtv8",
+    "item": "lg57mustangtv8",
+    "info": "Ford Mustang GT V8 sound. Best for modern Mustang and Coyote V8 builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg57mustangtv8%20Mustang%20GT%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/ford-mustang-gt-5-0-v8-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 67,
+    "category": "超跑 / Hypercar / F1｜Supercar / Hypercar / F1",
+    "name": "Bugatti Chiron W16",
+    "hash": "lg62chironpursport",
+    "item": "lg62chironpursport",
+    "info": "Bugatti Chiron Pur Sport W16 sound. Best for Chiron/Veyron/hypercar builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg62chironpursport%20Bugatti%20Chiron%20W16%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/bugatti-chiron-pursport-w16-sound-mod-sp-add-on-fivem-legacy_dmc",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 68,
+    "category": "美式肌肉 / V8 / Viper｜US Muscle / V8 / Viper",
+    "name": "Hellcat Redeye V8",
+    "hash": "lg81hcredeye",
+    "item": "lg81hcredeye",
+    "info": "Dodge Hellcat Redeye supercharged V8 sound. Best for Challenger/Charger Hellcat builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg81hcredeye%20Hellcat%20Redeye%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/dodge-challenger-hellcat-redeye-v8-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 69,
+    "category": "Ferrari V8 / V12｜Ferrari V8 / V12",
+    "name": "Ferrari 812 V12",
+    "hash": "lg86fer812sf",
+    "item": "lg86fer812sf",
+    "info": "Ferrari 812 Superfast V12 sound. Best for 812/F12 V12 grand-tourers.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg86fer812sf%20Ferrari%20812%20V12%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/ferrari-812-superfast-v12-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 70,
+    "category": "美式肌肉 / V8 / Viper｜US Muscle / V8 / Viper",
+    "name": "Camaro/Mustang V8",
+    "hash": "lg88camstang",
+    "item": "lg88camstang",
+    "info": "Modern American V8 sound suitable for Camaro/Mustang mixed muscle builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=lg88camstang%20Camaro/Mustang%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/cammed-mustang-5-0l-v8-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 71,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW M4 Sound",
+    "hash": "m4sound",
+    "item": "m4sound",
+    "info": "BMW M4 turbo inline-six sound. Best for M4/M3 modern BMW builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20M4%20Sound%20m4sound%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 72,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW M5 Crackle V8",
+    "hash": "m5cracklemod",
+    "item": "m5cracklemod",
+    "info": "BMW M5 V8 with crackles/pops. Best for tuned M5/M8 street builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=m5cracklemod%20BMW%20M5%20Crackle%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/m5-sound-mod",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 73,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW M8 S63 V8",
+    "hash": "m8engsound",
+    "item": "m8engsound",
+    "info": "BMW M8 S63 twin-turbo V8 sound. Best for M8/M5/XM high-performance BMW builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20M8%20S63%20V8%20m8engsound%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 74,
+    "category": "超跑 / Hypercar / F1｜Supercar / Hypercar / F1",
+    "name": "McLaren P1 V8 Hybrid",
+    "hash": "mcp1eng",
+    "item": "mcp1eng",
+    "info": "McLaren P1 twin-turbo V8 hybrid style sound. Best for P1/720S/Senna-style supercars.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=mcp1eng%20McLaren%20P1%20V8%20Hybrid%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/mclaren-p1-m838t-v8-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 75,
+    "category": "Mercedes-AMG｜Mercedes-AMG",
+    "name": "Mercedes AMG M156 V8",
+    "hash": "mercedesm156",
+    "item": "mercedesm156",
+    "info": "Mercedes-AMG M156 6.2L naturally aspirated V8. Best for C63/E63/SLS old AMG builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Mercedes%20AMG%20M156%20V8%20mercedesm156%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 76,
+    "category": "其他 / 特殊｜Other / Exotic",
+    "name": "Police Charger V8",
+    "hash": "npolchar",
+    "item": "npolchar",
+    "info": "Police Charger style V8 sound. Best for law-enforcement Charger/Crown Vic style vehicles.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Police%20Charger%20V8%20npolchar%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 77,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Toyota 2JZ / Supra I6",
+    "hash": "prgc30a",
+    "item": "prgc30a",
+    "info": "JDM turbo inline-six Supra-style sound. Best for Supra/Chaser/2JZ swap builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Toyota%202JZ%20/%20Supra%20I6%20prgc30a%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 78,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Skyline R34 RB26",
+    "hash": "r34sound",
+    "item": "r34sound",
+    "info": "Nissan Skyline R34 RB26 sound. Best for R34 GT-R/JDM builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=r34sound%20Skyline%20R34%20RB26%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/nissan-skyline-r34-i6-engine-sound-add-on-fivem-sound",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 79,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Nissan R35 GT-R V6",
+    "hash": "r35sound",
+    "item": "r35sound",
+    "info": "Nissan GT-R R35 VR38 V6 sound. Best for R35 and modern AWD performance builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=9Z-NNjSDDCE",
+    "youtubeSearchUrl": "",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 80,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Nissan RB26DETT I6",
+    "hash": "rb26dett",
+    "item": "rb26dett",
+    "info": "Nissan RB26DETT twin-turbo inline-six. Best for Skyline GT-R and RB swaps.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=rb26dett%20Nissan%20RB26DETT%20I6%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/nissan-skyline-r32-r33-r34-rb26dett-i6-engine-sound-mod-for-gta-v",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 81,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Mazda RX-7 Rotary",
+    "hash": "rx7bpeng",
+    "item": "rx7bpeng",
+    "info": "Mazda RX-7 rotary engine sound. Best for RX-7/drift/rotary builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=rx7bpeng%20Mazda%20RX-7%20Rotary%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/mazda-rx-7-13b-bridgeported-rotary-sound-mod",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 82,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Nissan S15 SR20DET",
+    "hash": "s15sound",
+    "item": "s15sound",
+    "info": "Nissan Silvia S15/SR20DET turbo four-cylinder sound. Best for S13/S14/S15 drift builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Nissan%20S15%20SR20DET%20s15sound%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 83,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW S63B44 V8",
+    "hash": "s63b44",
+    "item": "s63b44",
+    "info": "BMW S63B44 twin-turbo V8 sound. Best for M5/M6/M8/X5M builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20S63B44%20V8%20s63b44%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 84,
+    "category": "美式肌肉 / V8 / Viper｜US Muscle / V8 / Viper",
+    "name": "Dodge Viper SRT V10",
+    "hash": "srtvipeng",
+    "item": "srtvipeng",
+    "info": "Dodge Viper SRT V10 sound. Best for Viper and large V10 sports cars.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=srtvipeng%20Dodge%20Viper%20SRT%20V10%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/dodge-viper-srt-9-0l-v10-sound-mod-sp-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 85,
+    "category": "其他 / 特殊｜Other / Exotic",
+    "name": "Dodge Charger V8",
+    "hash": "st18char",
+    "item": "st18char",
+    "info": "Dodge Charger V8 sound. Best for Charger/Challenger police or muscle builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Dodge%20Charger%20V8%20st18char%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 86,
+    "category": "超跑 / Hypercar / F1｜Supercar / Hypercar / F1",
+    "name": "Lexus LFA V10 Alt",
+    "hash": "st37lfa",
+    "item": "st37lfa",
+    "info": "Alternative Lexus LFA V10 sound. Best for LFA/high-rev exotic GT builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Lexus%20LFA%20V10%20Alt%20st37lfa%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 87,
+    "category": "超跑 / Hypercar / F1｜Supercar / Hypercar / F1",
+    "name": "McLaren MP4-12C V8",
+    "hash": "st72mp4",
+    "item": "st72mp4",
+    "info": "McLaren MP4-12C twin-turbo V8 sound. Best for MP4/650S/720S style builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=McLaren%20MP4-12C%20V8%20st72mp4%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 88,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW M8 / S63 Race",
+    "hash": "str19m80",
+    "item": "str19m80",
+    "info": "BMW M8/S63 performance sound. Best for modern BMW V8 race builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20M8%20/%20S63%20Race%20str19m80%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 89,
+    "category": "摩托車｜Motorcycle",
+    "name": "Suzuki GSX-R1000",
+    "hash": "suzukigsxr1k",
+    "item": "suzukigsxr1k",
+    "info": "Suzuki GSX-R1000 superbike sound. Best for motorcycles/superbikes only.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=suzukigsxr1k%20Suzuki%20GSX-R1000%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/suzuki-gsx-r-1000-engine-sound-oiv-addon-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 90,
+    "category": "Ferrari V8 / V12｜Ferrari V8 / V12",
+    "name": "Ferrari F140B V12",
+    "hash": "ta018ferf140b",
+    "item": "ta018ferf140b",
+    "info": "Ferrari F140B V12 sound. Best for F12/812/LaFerrari style V12 cars.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=ta018ferf140b%20Ferrari%20F140B%20V12%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/ferrari-enzo-f140b-engine-sound-oiv-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 91,
+    "category": "Lamborghini V10 / V12｜Lamborghini V10 / V12",
+    "name": "Lamborghini L539 V12",
+    "hash": "ta023l539",
+    "item": "ta023l539",
+    "info": "Lamborghini L539 V12 sound. Best for Aventador/SVJ/Veneno V12 builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=ta023l539%20Lamborghini%20L539%20V12%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/lamborghini-avendator-l539-v12-engine-sound-oiv-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 92,
+    "category": "美式肌肉 / V8 / Viper｜US Muscle / V8 / Viper",
+    "name": "Dodge Viper V10",
+    "hash": "ta028viper",
+    "item": "ta028viper",
+    "info": "Dodge Viper V10 sound. Best for Viper/V10 swap builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=ta028viper%20Dodge%20Viper%20V10%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/dodge-viper-v10-engine-sound-oiv-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 93,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW S63B44 Loud",
+    "hash": "ta032s63b44",
+    "item": "ta032s63b44",
+    "info": "Loud BMW S63B44 V8. Best for tuned M5/M8/X5M builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20S63B44%20Loud%20ta032s63b44%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 94,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Nissan SR20DET I4",
+    "hash": "ta038sr20",
+    "item": "ta038sr20",
+    "info": "Nissan SR20DET turbo four-cylinder. Best for S13/S14/S15 and drift cars.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Nissan%20SR20DET%20I4%20ta038sr20%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 95,
+    "category": "JDM / 四缸 / 轉子 / 渦輪｜JDM / 4-Cyl / Rotary / Turbo",
+    "name": "Honda K20A Tuned",
+    "hash": "ta062k20a",
+    "item": "ta062k20a",
+    "info": "Tuned Honda K20A high-rev four-cylinder. Best for Civic/Integra Type R builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=ta062k20a%20Honda%20K20A%20Tuned%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/honda-integra-dc5-type-r-k20a-engine-sound-oiv-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 96,
+    "category": "Ferrari V8 / V12｜Ferrari V8 / V12",
+    "name": "Ferrari 812 Novitec V12",
+    "hash": "ta092nov812",
+    "item": "ta092nov812",
+    "info": "Ferrari 812 Novitec-style V12. Best for tuned 812/F12 builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Ferrari%20812%20Novitec%20V12%20ta092nov812%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 97,
+    "category": "BMW M Power｜BMW M Power",
+    "name": "BMW S58 I6",
+    "hash": "ta122s58",
+    "item": "ta122s58",
+    "info": "BMW S58 twin-turbo inline-six sound. Best for G80/G82 M3/M4 and Supra swaps.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=ta122s58%20BMW%20S58%20I6%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/bmw-m3-4-s58b30-engine-sound-oiv-add-on-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 98,
+    "category": "Audi / Bentley / VAG｜Audi / Bentley / VAG",
+    "name": "Audi 4.0 TFSI V8",
+    "hash": "taaud40v8",
+    "item": "taaud40v8",
+    "info": "Audi 4.0 TFSI twin-turbo V8. Best for RS6/RS7/S8/Bentley style builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=taaud40v8%20Audi%204.0%20TFSI%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/vw-audi-4-0t-v8-ea825-engine-sound-oiv-addon-fivem",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 99,
+    "category": "超跑 / Hypercar / F1｜Supercar / Hypercar / F1",
+    "name": "Porsche GT3 Flat-6",
+    "hash": "tagt3flat6",
+    "item": "tagt3flat6",
+    "info": "Porsche GT3 naturally aspirated flat-six. Best for 911 GT3/GT3 RS builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Porsche%20GT3%20Flat-6%20tagt3flat6%20FiveM%20engine%20sound%20preview",
+    "sourceBackup": "",
+    "status": "pending",
+    "adminNote": ""
+  },
+  {
+    "no": 100,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Nissan VR38DETT",
+    "hash": "vr38dett",
+    "item": "vr38dett",
+    "info": "Nissan VR38DETT twin-turbo V6. Best for R35 GT-R and VR38 swaps.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=9Z-NNjSDDCE",
+    "youtubeSearchUrl": "",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 101,
+    "category": "Nissan GT-R / RB / VR 系列｜Nissan GT-R / RB / VR",
+    "name": "Nissan VR38 V6 Alt",
+    "hash": "vr38dettv6",
+    "item": "vr38dettv6",
+    "info": "Alternative Nissan VR38 twin-turbo V6 sound. Best for R35 GT-R style builds.",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=9Z-NNjSDDCE",
+    "youtubeSearchUrl": "",
+    "sourceBackup": "",
+    "status": "ready",
+    "adminNote": ""
+  },
+  {
+    "no": 102,
+    "category": "Mercedes-AMG｜Mercedes-AMG",
+    "name": "AMG M113K Weistec",
+    "hash": "weistecm113k",
+    "item": "weistecm113k",
+    "info": "Supercharged Mercedes-AMG M113K/Weistec sound. Best for older AMG V8 builds.",
+    "exactYoutubeUrl": "",
+    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=weistecm113k%20AMG%20M113K%20Weistec%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.gta5-mods.com/vehicles/weistec-m113k-5-4l-supercharged-v8-kompressor-engine-sound",
+    "status": "pending",
+    "adminNote": ""
+  }
+]</script>
 <script>
-const sounds = window.PNRP_SOUND_CONFIG || [];
-const grid=document.getElementById('grid'), q=document.getElementById('q'), cat=document.getElementById('cat'), empty=document.getElementById('empty');
-const escapeHtml=s=>String(s??'').replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]));
-function ytId(url){if(!url)return null;const ps=[/youtube\.com\/watch\?v=([^&]+)/,/youtu\.be\/([^?&]+)/,/youtube\.com\/embed\/([^?&]+)/,/youtube\.com\/shorts\/([^?&]+)/];for(const p of ps){const m=url.match(p);if(m)return m[1];}return null;}
-function openVideo(url){const id=ytId(url);if(!id)return;document.getElementById('player').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';document.getElementById('videoModal').classList.add('show');}
-function closeVideo(){document.getElementById('player').src='';document.getElementById('videoModal').classList.remove('show');}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
-function initCats(){[...new Set(sounds.map(s=>s.category).filter(Boolean))].forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;cat.appendChild(o);});}
-function render(){const term=q.value.trim().toLowerCase(), c=cat.value;const filtered=sounds.filter(s=>(!c||s.category===c)&&(!term||[s.name,s.hash,s.item,s.info,s.category].join(' ').toLowerCase().includes(term)));grid.innerHTML=filtered.map(s=>{const ready=!!ytId(s.exactYoutubeUrl);const src=s.sourceBackup?`<a class="btn source" href="${escapeHtml(s.sourceBackup)}" target="_blank" rel="noopener">Source</a>`:'';const search=s.youtubeSearchUrl?`<a class="btn source" href="${escapeHtml(s.youtubeSearchUrl)}" target="_blank" rel="noopener">搜尋 / Search</a>`:'';return `<article class="card"><div class="top"><div class="num">#${s.no}</div><div class="tag ${ready?'ready':'pending'}">${ready?'可播放 / Ready':'待放置影片 / Pending'}</div></div><h3>${escapeHtml(s.name)}</h3><div class="cat">${escapeHtml(s.category)}</div><div class="hash"><span>${escapeHtml(s.hash)}</span><button class="copy" onclick="navigator.clipboard.writeText('${escapeHtml(s.hash)}')">Copy</button></div><div class="info">${escapeHtml(s.info)}</div><div class="actions">${ready?`<button class="btn youtube" onclick="openVideo('${escapeHtml(s.exactYoutubeUrl)}')">▶ 站內播放 / Play</button>`:`<button class="btn disabled" disabled>⏺ 待放置影片</button>`}${src}${!ready?search:''}</div><div class="note">${ready?'已配置 YouTube 影片，可直接播放。':'尚未配置精準影片；請由後台 admin.html 補入 YouTube 連結。'}</div></article>`}).join('');empty.style.display=filtered.length?'none':'block';}
-function stats(){const ready=sounds.filter(s=>ytId(s.exactYoutubeUrl)).length;document.getElementById('totalCount').textContent=sounds.length;document.getElementById('readyCount').textContent=ready;document.getElementById('pendingCount').textContent=sounds.length-ready;document.getElementById('sourceCount').textContent=sounds.filter(s=>s.sourceBackup).length;}
-q.addEventListener('input',render);cat.addEventListener('change',render);document.getElementById('clear').onclick=()=>{q.value='';cat.value='';render()};initCats();stats();render();
+const data = JSON.parse(document.getElementById('sound-data').textContent);
+const grid = document.getElementById('grid');
+const q = document.getElementById('q');
+const cat = document.getElementById('cat');
+const statusFilter = document.getElementById('status');
+const empty = document.getElementById('empty');
+const modal = document.getElementById('modal');
+const frame = document.getElementById('ytframe');
+const playerTitle = document.getElementById('playerTitle');
+const toast = document.getElementById('toast');
+
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function toastMsg(msg) {
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 1300);
+}
+
+function getYouTubeId(url) {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    if (u.hostname.includes('youtube.com')) {
+      if (u.pathname === '/watch') return u.searchParams.get('v');
+      if (u.pathname.startsWith('/embed/')) return u.pathname.split('/embed/')[1].split('/')[0];
+      if (u.pathname.startsWith('/shorts/')) return u.pathname.split('/shorts/')[1].split('/')[0];
+    }
+    if (u.hostname.includes('youtu.be')) return u.pathname.replace('/','').split('/')[0];
+  } catch(e) {}
+  const m = String(url).match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([A-Za-z0-9_-]{6,})/);
+  return m ? m[1] : null;
+}
+
+function getStart(url) {
+  if (!url) return 0;
+  try {
+    const u = new URL(url);
+    const raw = u.searchParams.get('t') || u.searchParams.get('start');
+    if (!raw) return 0;
+    if (/^\d+$/.test(raw)) return parseInt(raw, 10);
+    const m = raw.match(/(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?/);
+    if (m) return (parseInt(m[1]||0)*3600)+(parseInt(m[2]||0)*60)+(parseInt(m[3]||0));
+  } catch(e) {}
+  return 0;
+}
+
+function openVideo(url, title) {
+  const id = getYouTubeId(url);
+  if (!id) {
+    window.open(url, '_blank', 'noopener');
+    return;
+  }
+  const start = getStart(url);
+  playerTitle.textContent = title || 'PNRP Engine Sound Preview';
+  frame.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0${start ? '&start=' + start : ''}`;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeVideo() {
+  frame.src = '';
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('close').addEventListener('click', closeVideo);
+modal.addEventListener('click', e => { if (e.target === modal) closeVideo(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVideo(); });
+
+function setupCategories() {
+  const cats = [...new Set(data.map(x => x.category).filter(Boolean))];
+  cat.innerHTML = '<option value="">全部分類 / All Categories</option>' + cats.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
+}
+
+function card(sound) {
+  const exact = (sound.exactYoutubeUrl || '').trim();
+  const ytid = getYouTubeId(exact);
+  const ready = Boolean(ytid);
+  const hasSearch = (sound.youtubeSearchUrl || '').trim();
+  const hasSource = (sound.sourceBackup || '').trim();
+  const tag = ready ? '可播放 / Playable' : '待影片 / Pending';
+  const tagClass = ready ? 'ready' : 'pending';
+  const actions = [];
+  if (ready) actions.push(`<button class="btn youtube" onclick="openVideo('${esc(exact)}','${esc(sound.name)}｜${esc(sound.hash)}')">▶ 站內播放 / Play</button>`);
+  if (!ready && hasSearch) actions.push(`<a class="btn searchbtn" href="${esc(hasSearch)}" target="_blank" rel="noopener">🔎 YouTube 搜尋</a>`);
+  if (hasSource) actions.push(`<a class="btn source" href="${esc(hasSource)}" target="_blank" rel="noopener">Source / 原作者</a>`);
+  if (!actions.length) actions.push(`<span class="btn source">待放置影片 / Pending</span>`);
+
+  return `<article class="card ${ready ? 'ready' : 'pending'}">
+    <div class="top">
+      <div class="num">#${esc(sound.no)}</div>
+      <div class="tag ${tagClass}">${tag}</div>
+    </div>
+    <h3>${esc(sound.name)}</h3>
+    <div class="cat">${esc(sound.category)}</div>
+    <div class="hash"><span>${esc(sound.hash)}</span><button class="copy" onclick="copyHash('${esc(sound.hash)}')">Copy</button></div>
+    <div class="info">${esc(sound.info)}</div>
+    <div class="actions">${actions.join('')}</div>
+    <div class="note">${ready ? '已填入精準 YouTube 連結，可直接在本網站播放。' : '尚未填入精準 YouTube 影片；不會亂配影片，避免牛頭不對馬嘴。'}</div>
+  </article>`;
+}
+
+function copyHash(hash) {
+  navigator.clipboard?.writeText(hash).then(() => toastMsg('已複製 / Copied: ' + hash)).catch(() => toastMsg(hash));
+}
+
+function render() {
+  const query = q.value.trim().toLowerCase();
+  const catVal = cat.value;
+  const st = statusFilter.value;
+  const filtered = data.filter(x => {
+    const ready = Boolean(getYouTubeId((x.exactYoutubeUrl || '').trim()));
+    const text = [x.name, x.hash, x.item, x.info, x.category].join(' ').toLowerCase();
+    if (query && !text.includes(query)) return false;
+    if (catVal && x.category !== catVal) return false;
+    if (st === 'ready' && !ready) return false;
+    if (st === 'pending' && ready) return false;
+    return true;
+  });
+  grid.innerHTML = filtered.map(card).join('');
+  empty.style.display = filtered.length ? 'none' : 'block';
+}
+
+document.getElementById('clear').addEventListener('click', () => {
+  q.value = '';
+  cat.value = '';
+  statusFilter.value = '';
+  render();
+});
+q.addEventListener('input', render);
+cat.addEventListener('change', render);
+statusFilter.addEventListener('change', render);
+setupCategories();
+render();
 </script>
-</body></html> 
+</body>
+</html>
