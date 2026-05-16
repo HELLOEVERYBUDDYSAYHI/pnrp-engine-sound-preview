@@ -1,5 +1,4 @@
 // PNRP Engine Sound Preview Config
-// 用 admin.html 編輯後，可以匯出新的 sounds-config.js 再覆蓋這個文件。
 window.PNRP_SOUND_CONFIG = [
   {
     "no": 1,
@@ -8,10 +7,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc202svjgianv12",
     "item": "kc202svjgianv12",
     "info": "6.5L Lamborghini V12 style swap. Best for Aventador/SVJ/Veneno class supercars; not suitable for tiny city cars.",
-    "exactYoutubeUrl": "",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=mhAdgufH-kI&t=4s",
     "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Lamborghini%20SVJ%20V12%20kc202svjgianv12%20FiveM%20engine%20sound%20preview",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -22,8 +21,8 @@ window.PNRP_SOUND_CONFIG = [
     "item": "kc32jpn13b",
     "info": "JDM 13B rotary sound. Best for RX-7/RX-8 style builds, lightweight drift cars and rotary conversions.",
     "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Mazda%2013B%20Rotary%20kc32jpn13b%20FiveM%20engine%20sound%20preview",
-    "sourceBackup": "",
+    "youtubeSearchUrl": "https://drive.google.com/file/d/1fcrBZjVb3zY4MRhNHfo8kK-gXNTdvv8E/view",
+    "sourceBackup": "https://drive.google.com/file/d/1fcrBZjVb3zY4MRhNHfo8kK-gXNTdvv8E/view",
     "status": "pending",
     "adminNote": ""
   },
@@ -34,10 +33,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc58challengersrt",
     "item": "kc58challengersrt",
     "info": "American SRT V8 muscle sound. Best for Challenger/Charger/Camaro/Mustang class cars.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Dodge%20Challenger%20SRT%20V8%20kc58challengersrt%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=rjjFeXPJTaE",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=rjjFeXPJTaE",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -47,10 +46,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc58stk62srt",
     "item": "kc58stk62srt",
     "info": "Stock 6.2L SRT/Hellcat style V8. Best for heavy American muscle cars and high-power street builds.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Dodge%206.2%20SRT%20V8%20kc58stk62srt%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=kJP4oXVsKA8",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=kJP4oXVsKA8",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -60,10 +59,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc150rb25detst",
     "item": "kc150rb25detst",
     "info": "RB25DET turbo inline-six sound. Best for R33/S-Chassis/JDM drift builds.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Nissan%20RB25DET%20I6%20kc150rb25detst%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=fgEO3IV_Zgg",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=fgEO3IV_Zgg",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -73,10 +72,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc155m177gtr18",
     "item": "kc155m177gtr18",
     "info": "Mercedes-AMG M177 bi-turbo V8 style. Best for AMG GT/C63/E63 class cars.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=AMG%20M177%20V8%20kc155m177gtr18%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=WL_e85RKI7k",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=WL_e85RKI7k",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -86,10 +85,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc158k20si",
     "item": "kc158k20si",
     "info": "Honda K20 high-rev four-cylinder sound. Best for Civic/Integra/lightweight FWD swaps.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Honda%20K20%20Civic%20Si%20kc158k20si%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=2lC2QUo-Pr8",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=2lC2QUo-Pr8",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -99,10 +98,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc167gryaris",
     "item": "kc167gryaris",
     "info": "Toyota GR Yaris turbo three-cylinder style sound. Best for compact rally/hot-hatch builds.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Toyota%20GR%20Yaris%20G16E%20kc167gryaris%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=V5i-fKXGDBw",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=V5i-fKXGDBw",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -112,10 +111,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc169v10gallardo",
     "item": "kc169v10gallardo",
     "info": "Lamborghini 5.0/5.2 V10 style sound. Best for Gallardo/Huracan/R8 style supercars.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Lamborghini%20Gallardo%20V10%20kc169v10gallardo%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=dqcY0GmnRIM",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=dqcY0GmnRIM",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -125,10 +124,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc169v10ita50",
     "item": "kc169v10ita50",
     "info": "High-rev Italian V10 sound. Best for mid-engine exotic builds and race conversions.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Italian%205.0%20V10%20kc169v10ita50%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=Pu0c1dzPn8k",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=Pu0c1dzPn8k",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -138,10 +137,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc189gtrnism",
     "item": "kc189gtrnism",
     "info": "GT-R Nismo VR38 twin-turbo V6 sound. Best for R35 GT-R and AWD supercar builds.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Nissan%20GT-R%20Nismo%20VR38%20kc189gtrnism%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=9Z-NNjSDDCE",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=9Z-NNjSDDCE",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -151,10 +150,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc195rb26nur",
     "item": "kc195rb26nur",
     "info": "RB26DETT NUR-style turbo inline-six. Best for Skyline GT-R R32/R33/R34 builds.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Nissan%20RB26%20NUR%20I6%20kc195rb26nur%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=6jcqCjR79_g",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=6jcqCjR79_g",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -164,10 +163,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc201m4f82",
     "item": "kc201m4f82",
     "info": "BMW S55 twin-turbo inline-six sound. Best for M3/M4 F80/F82 and modern BMW swaps.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20M4%20F82%20S55%20kc201m4f82%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=I511oPMn0Sc",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=I511oPMn0Sc",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -177,10 +176,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc201s55loud",
     "item": "kc201s55loud",
     "info": "Loud BMW S55 twin-turbo inline-six. Best for tuned M3/M4 builds with aggressive exhaust.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20S55%20Loud%20kc201s55loud%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=I511oPMn0Sc",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=I511oPMn0Sc",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -190,10 +189,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc206yar1akra",
     "item": "kc206yar1akra",
     "info": "High-rev superbike sound. Best for motorcycle/superbike builds, not normal cars.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Yamaha%20R1%20Akrapovic%20kc206yar1akra%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=g0BUqz5C-0g",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=g0BUqz5C-0g",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -203,10 +202,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc212v12vantsecret",
     "item": "kc212v12vantsecret",
     "info": "Aston Martin V12 grand-tourer sound. Best for Vantage/DBS/DB11 style GT cars.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Aston%20Martin%20V12%20kc212v12vantsecret%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=4v7OanSmVHM",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=4v7OanSmVHM",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -216,10 +215,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc219k20decat",
     "item": "kc219k20decat",
     "info": "Decatted Honda K20 high-rev four-cylinder. Best for Civic/Integra/track hatch builds.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Honda%20K20%20Decat%20kc219k20decat%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=UJsTfcWpQAY",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=UJsTfcWpQAY",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -229,10 +228,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc223b48loud",
     "item": "kc223b48loud",
     "info": "BMW B48 turbo four-cylinder loud exhaust sound. Best for 20i/30i BMW and compact euro builds.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20B48%20Loud%20kc223b48loud%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=l_Q7yN5VD1w",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=l_Q7yN5VD1w",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -242,10 +241,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc229v10secret52",
     "item": "kc229v10secret52",
     "info": "Secret/tuned 5.2L V10 style. Best for Huracan/Gallardo/R8 class cars.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Lamborghini%205.2%20V10%20kc229v10secret52%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=5XJJlYFtNm4",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=5XJJlYFtNm4",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -268,10 +267,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc259gt3swf1",
     "item": "kc259gt3swf1",
     "info": "High-rev GT3/F1-inspired race sound. Best for GT3/track-only Porsche style builds.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Porsche%20GT3%20F1%20Style%20kc259gt3swf1%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=kIObX-UIVQc",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=kIObX-UIVQc",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -281,10 +280,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc228m5s63t",
     "item": "kc228m5s63t",
     "info": "BMW S63TU twin-turbo V8 sound. Best for M5/M8/X5M/X6M and fast executive builds.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20M5%20S63TU%20V8%20kc228m5s63t%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=RAQdIVi98ds",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=RAQdIVi98ds",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -294,10 +293,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc228m5s63tpops",
     "item": "kc228m5s63tpops",
     "info": "BMW S63TU V8 with pops/crackles. Best for tuned M5/M8 builds with aggressive exhaust.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=BMW%20M5%20S63%20Pops%20kc228m5s63tpops%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=RAQdIVi98ds",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=RAQdIVi98ds",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -307,10 +306,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc32rx7fd3s",
     "item": "kc32rx7fd3s",
     "info": "RX-7 FD3S 13B rotary sound. Best for RX-7 builds, drift cars and rotary swaps.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Mazda%20RX-7%20FD%2013B%20kc32rx7fd3s%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=g1QBEgRCYAY",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=g1QBEgRCYAY",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -320,10 +319,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "kc131vq35de",
     "item": "kc131vq35de",
     "info": "Nissan VQ35 naturally aspirated V6 sound. Best for 350Z/G35/Fairlady style builds.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=Nissan%20VQ35DE%20V6%20kc131vq35de%20FiveM%20engine%20sound%20preview",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=sczDcNMreek",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=sczDcNMreek",
     "sourceBackup": "",
-    "status": "pending",
+    "status": "ready",
     "adminNote": ""
   },
   {
@@ -346,8 +345,8 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "aq10nisvr38dett",
     "item": "aq10nisvr38dett",
     "info": "Nissan GT-R VR38DETT twin-turbo V6. Best for R35 GT-R and modern AWD performance cars.",
-    "exactYoutubeUrl": "https://www.youtube.com/watch?v=9Z-NNjSDDCE",
-    "youtubeSearchUrl": "",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=CqKvqSAloQo",
+    "youtubeSearchUrl": "https://www.youtube.com/watch?v=CqKvqSAloQo",
     "sourceBackup": "",
     "status": "ready",
     "adminNote": ""
@@ -359,10 +358,10 @@ window.PNRP_SOUND_CONFIG = [
     "hash": "aq35ferf154cd",
     "item": "aq35ferf154cd",
     "info": "Ferrari F154 twin-turbo V8 style sound. Best for 488/F8/Roma/Portofino style cars.",
-    "exactYoutubeUrl": "",
-    "youtubeSearchUrl": "https://www.youtube.com/results?search_query=aq35ferf154cd%20Ferrari%20F154%20V8%20GTA%205%20FiveM%20engine%20sound",
-    "sourceBackup": "https://www.gta5-mods.com/vehicles/ferrari-488-f154-v8-engine-sound-oiv-add-on-fivem-sound",
-    "status": "pending",
+    "exactYoutubeUrl": "https://www.youtube.com/watch?v=2Qg5QGZ9I1s",
+    "youtubeSearchUrl": "https://wahttps://www.youtube.com/watch?v=2Qg5QGZ9I1sww.youtube.com/results?search_query=aq35ferf154cd%20Ferrari%20F154%20V8%20GTA%205%20FiveM%20engine%20sound",
+    "sourceBackup": "https://www.youtube.com/watch?v=2Qg5QGZ9I1s",
+    "status": "ready",
     "adminNote": ""
   },
   {
